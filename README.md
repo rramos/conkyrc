@@ -28,4 +28,6 @@ In order to setup correctly in automatic startup applications you should use the
 * **Icons setup** Faenza-Dark
 * **Window Manager:**  `Marco` without composite in **Mate Tweaks**
 
- 
+## Thumbnail ##
+
+![thumbnail image](.conky/thumbnail.png) 
