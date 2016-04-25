@@ -124,6 +124,6 @@ ${voffset 0}${color}${font}${alignc}Wireless essid:$alignr${wireless_essid wlp7s
 ############### CONTAINERS ###################
 ${voffset -10}${color2}${font LED.Font:size=12}CONTAINERS ${font}$hr
 
-${exec lxc-ls -f | awk  '{ printf "%-8s %s %14s\n", $1, $2, $5 }' }
+${color}${exec lxc-ls -f | awk  '{ printf "%-8s %s %14s\n", $1, $2, $5 }' }${color}
 
 
