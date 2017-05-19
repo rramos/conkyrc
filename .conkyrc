@@ -122,8 +122,8 @@ ${voffset 0}${color}${font}${alignc}Wireless essid:$alignr${wireless_essid wlp7s
 
 
 ############### CONTAINERS ###################
-${voffset -10}${color2}${font LED.Font:size=12}CONTAINERS ${font}$hr
+${voffset -10}${color2}${font LED.Font:size=12}DOCKERS ${font}$hr
 
-${color}${exec lxc-ls -f | awk  '{ printf "%-8s %s %14s\n", $1, $2, $5 }' }${color}
+${color}${execi 300 sudo docker ps | awk 'NR <=1 {next} {printf "%s\t%s", $1,$2}'}${color}
 
 
