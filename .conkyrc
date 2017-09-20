@@ -108,7 +108,7 @@ ${voffset -10}${color2}${font LED.Font:size=12}NETWORK ${font}$hr
 
 ${color}gateway IP: ${alignr}${gw_ip}
 ${color}local IP: $alignr${addr enp2s0}
-${color}public IP: $alignr${execi 60 curl ifconfig.io}
+#${color}public IP: $alignr${execi 60 curl ifconfig.io}
 
 ${voffset 5}${color}${goto 10}${font pizzadude bullets:size=16}S${font}${color}${voffset -12}${goto 40}Down: ${downspeed enp2s0}kb/s ${color}
 ${goto 40}Day: ${totaldown enp2s0}${voffset -12}${alignr}${downspeedgraph enp2s0 25,50 f1bc5f f1bc5f}
@@ -124,6 +124,6 @@ ${voffset 0}${color}${font}${alignc}Wireless essid:$alignr${wireless_essid wlp7s
 ############### CONTAINERS ###################
 ${voffset -10}${color2}${font LED.Font:size=12}DOCKERS ${font}$hr
 
-${color}${execi 300 sudo docker ps | awk 'NR <=1 {next} {printf "%s\t%s", $1,$2}'}${color}
+${color}${execi 300 sudo docker ps | awk '{printf "%s\n",$2}' | grep -v ID }${color}
 
 
