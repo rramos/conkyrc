@@ -124,6 +124,6 @@ ${voffset 0}${color}${font}${alignc}Wireless essid:$alignr${wireless_essid wlp7s
 ############### CONTAINERS ###################
 ${voffset -10}${color2}${font LED.Font:size=12}DOCKERS ${font}$hr
 
-${color}${execi 300 sudo docker ps | awk '{printf "%s\n",$2}' | grep -v ID }${color}
+${color}${execi 300  docker ps --format "{{.Names}}" }${color}
 
 
